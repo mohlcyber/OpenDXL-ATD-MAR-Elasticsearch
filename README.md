@@ -65,6 +65,8 @@ With this use case, ATD produces local intelligence and pushes IOC information v
 
 It is possible to visualize the results with Kibana. Make sure to add the Index Patterns first.
 
+The Dashboard below shows the latest ATD analysis (atd index) and the two rows below show the indicators Active Response found in DXL fabric1 (marc1 index) and DXL fabric2 (marc2 index).
+
 ![22_atd_mar_elastic](https://cloud.githubusercontent.com/assets/25227268/25066853/9b207370-2232-11e7-981b-5e84ed242d18.PNG)
 
 
