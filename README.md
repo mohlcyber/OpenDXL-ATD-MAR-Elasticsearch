@@ -14,8 +14,16 @@ This integration is focusing on the automated real-time threat hunting with McAf
 ## Prerequisites
 McAfee ATD solution (tested with ATD 3.8)
 
+Download the [Latest Release](https://github.com/mohl1/OpenDXL-ATD-MAR-Elasticsearch/releases)
+   * Extract the release .zip file
+   
 OpenDXL Python installation
 1. Python SDK Installation ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/installation.html))
+    Install the required dependencies with the requirements.txt file:
+    ```sh
+    $ pip install -r requirements.txt
+    ```
+    This will install the dxlclient, dxlmarclient, and  elasticsearch modules.     
 2. Certificate Files Creation ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/certcreation.html))
 3. ePO Certificate Authority (CA) Import ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epocaimport.html))
 4. ePO Broker Certificates Export ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epobrokercertsexport.html))
@@ -23,7 +31,8 @@ OpenDXL Python installation
 
 Elasticsearch and Kibana (tested with 5.1.2)
 
-Elasticsearch Python client ([Link](https://github.com/elastic/elasticsearch-py))
+Elasticsearch Python client ([Link](https://github.com/elastic/elasticsearch-py)). This dependency will be installed
+as part of install using the requirements.txt file.
 
 ## Configuration
 McAfee ATD receives files from multiple sensors like Endpoints, Web Gateways, Network IPS or via Rest API. ATD will perform malware analytics and produce local threat intelligence. After an analysis every indicator of comprise will be published via the Data Exchange Layer (topic: /mcafee/event/atd/file/report).
