@@ -44,8 +44,11 @@ with DxlClient(config) as client:
             try:
                 query = event.payload.decode()
                 logger.info("Event received: " + query)
-                
-                query = query[:-3]
+
+                # The ATD json can sometimes have non-standard json characters
+                # at the end. Let's clean it up.
+                # End the json at the last curly brace: }
+                query = query[:query.rfind('}')+1]
                 query = json.loads(query)
                 
                 # Push ATD analysis data into Elasticsearch / Kibana
